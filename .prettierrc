@@ -9,6 +9,7 @@
     "prettier-plugin-tailwindcss",
     "prettier-plugin-organize-attributes"
   ],
+  "tailwindConfig": "./tailwind.config.js" ,
   "organizeAttributes": {
     "multiline": "always"
   }
