@@ -48,7 +48,10 @@ const AuthForm = <T extends FieldValues>({
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(handleSubmit)} className="space-y-8">
+      <form
+        onSubmit={form.handleSubmit(handleSubmit)}
+        className="mt-10 space-y-8"
+      >
         {Object.keys(defaultValues).map((field) => (
           <FormField
             key={field}
@@ -66,6 +69,7 @@ const AuthForm = <T extends FieldValues>({
                     required
                     type={field.name === "password" ? "password" : "text"}
                     {...field}
+                    className="w-full rounded-md bg-white px-4 py-5 font-normal tracking-tight text-gray-900 shadow-none focus:outline-none focus-visible:ring-0"
                   />
                 </FormControl>
 
@@ -75,7 +79,10 @@ const AuthForm = <T extends FieldValues>({
           />
         ))}
 
-        <Button disabled={form.formState.isSubmitting}>
+        <Button
+          className="base-semibold w-full rounded-[12px] px-3 py-6 tracking-tight"
+          disabled={form.formState.isSubmitting}
+        >
           {form.formState.isSubmitting
             ? buttonText === "Sign In"
               ? "Signing In..."
@@ -83,13 +90,18 @@ const AuthForm = <T extends FieldValues>({
             : buttonText}
         </Button>
         {formType === "SIGN_IN" ? (
-          <p>
+          <p className="">
             Don&apos;t have an account?{" "}
-            <Link href={ROUTES.SIGN_UP}>Sign Up</Link>
+            <Link className="font-bold" href={ROUTES.SIGN_UP}>
+              Sign Up
+            </Link>
           </p>
         ) : (
           <p>
-            Already have an account? <Link href={ROUTES.SIGN_IN}>Sign In</Link>
+            Already have an account?{" "}
+            <Link className="font-bold" href={ROUTES.SIGN_IN}>
+              Sign In
+            </Link>
           </p>
         )}
       </form>

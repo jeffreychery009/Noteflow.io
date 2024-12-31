@@ -10,7 +10,7 @@ import { toast } from "@/hooks/use-toast";
 import { Button } from "../ui/button";
 
 const SocialAuthForm = () => {
-  const buttonClass = `h-[48px] rounded-[12px] border-none flex items-center justify-center gap-2 bg-[#D9D9D9] hover:bg-[#D9D9D9] text-dark  shadow-none w-auto px-4 `;
+  const buttonClass = `h-[48px] rounded-[12px] border-none flex flex-1 items-center justify-center  bg-[#D9D9D9] hover:bg-[#D1D1D1] text-dark  shadow-none w-auto  `;
 
   const handleSignIn = async (provider: "google" | "twitter" | "facebook") => {
     try {
@@ -31,15 +31,9 @@ const SocialAuthForm = () => {
   };
 
   return (
-    <div className="mt-28 flex flex-col justify-center gap-3">
+    <div className="flex flex-wrap gap-4">
       <Button onClick={() => handleSignIn("google")} className={buttonClass}>
-        <Image
-          src="/icons/google.svg"
-          width={24}
-          height={24}
-          alt="Google"
-          className=""
-        />
+        <Image src="/icons/google.svg" width={24} height={24} alt="Google" />
         <span>Log in with Google</span>
       </Button>
       <Button className={buttonClass}>

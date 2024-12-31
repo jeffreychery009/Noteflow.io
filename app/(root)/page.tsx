@@ -7,7 +7,7 @@ import ROUTES from "@/constants/routes";
 const Home = () => {
   return (
     <main>
-      <div className="m-7 mt-28 flex flex-col items-center md:mx-auto md:mt-20 md:max-w-sm lg:mx-auto lg:max-w-md">
+      <div className="mt-28 flex flex-col items-center md:mx-auto md:mt-20 md:max-w-sm lg:mx-auto lg:max-w-md">
         <div>
           <h2 className="h2-bold md:h2-bold-desktop tracking-tighter">
             Noteflow
@@ -31,7 +31,9 @@ const Home = () => {
             <p className="body-small md:text-[14px]">
               Already have an account?{" "}
               <span>
-                <Link href={ROUTES.SIGN_IN}>Sign In</Link>
+                <Link className="font-semibold" href={ROUTES.SIGN_IN}>
+                  Sign In
+                </Link>
               </span>
             </p>
           </div>
