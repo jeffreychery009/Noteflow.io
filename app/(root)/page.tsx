@@ -24,9 +24,9 @@ const Home = () => {
           </p>
         </div>
         <div className="gap mt-80 flex flex-col items-center gap-3">
-          <Button className="btn-primary">
-            <Link href={ROUTES.SIGN_UP}>Get Started</Link>
-          </Button>
+          <Link href={ROUTES.SIGN_UP}>
+            <Button className="btn-primary">Get Started</Button>
+          </Link>
           <div>
             <p className="body-small md:text-[14px]">
               Already have an account?{" "}
