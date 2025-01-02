@@ -6,8 +6,8 @@ import ROUTES from "@/constants/routes";
 
 const Home = () => {
   return (
-    <main>
-      <div className="mt-28 flex flex-col items-center md:mx-auto md:mt-20 md:max-w-sm lg:mx-auto lg:max-w-md">
+    <main className="flex min-h-screen flex-col items-center justify-center">
+      <div className="mx-auto flex flex-col items-center md:max-w-md">
         <div>
           <h2 className="h2-bold md:h2-bold-desktop tracking-tighter">
             Noteflow
