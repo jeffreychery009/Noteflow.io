@@ -26,7 +26,7 @@ export default async function RootLayout({
   return (
     <html lang="en">
       <SessionProvider session={session}>
-        <body className={`${inter.variable} antialiased`}>
+        <body className={`${inter.variable} p-8 antialiased`}>
           <Toaster />
           {children}
         </body>
