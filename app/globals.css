@@ -22,6 +22,10 @@
     @apply text-[24px] font-semibold;
   }
 
+  .base-bold {
+    @apply text-[18px] font-bold;
+  }
+
   .base-semibold {
     @apply text-[18px] font-semibold;
   }
@@ -30,12 +34,20 @@
     @apply text-[14px] font-normal;
   }
 
+  .body-nav {
+    @apply text-[18px] font-normal;
+  }
+
   .body-small {
     @apply text-[12px] font-normal;
   }
 
   .btn-primary {
     @apply flex h-[59px] w-[296px] items-center justify-center rounded-[16px];
+  }
+
+  .primary-gradient {
+    background: linear-gradient(-90deg, #7dc5ed 0%, #12a7fb 50%);
   }
 }
 
