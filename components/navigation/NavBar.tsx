@@ -19,7 +19,8 @@ const NavBar = () => {
             <h2 className="h2-bold">Notes</h2>
           ) : null}
 
-          <div className="flex items-center">
+          <div className="flex items-center justify-between gap-6">
+            <div>Theme</div>
             <MobileNavigation />
           </div>
         </header>

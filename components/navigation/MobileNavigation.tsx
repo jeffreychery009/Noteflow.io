@@ -33,7 +33,7 @@ const MobileNavigation = () => {
             NoteFlow.<span className="text-[#12A7FB]">io</span>
           </h2>
 
-          <div className="mt-[72px] flex flex-col justify-between overflow-y-auto">
+          <div className="mt-[72px] flex-col justify-between overflow-y-auto">
             <section className="flex flex-col gap-5">
               <NavLinks isMobile />
             </section>
@@ -42,7 +42,7 @@ const MobileNavigation = () => {
           <div className="mb-8 p-4">
             <SheetClose asChild>
               <Button
-                className="primary-gradient base-bold mt-[160px] w-full items-center justify-center rounded-lg p-6 shadow-none"
+                className="primary-gradient base-semibold mt-[10px] w-full items-center justify-center rounded-lg p-6 shadow-none"
                 onClick={() => signOut({ callbackUrl: ROUTES.SIGN_IN })}
               >
                 Log Out
