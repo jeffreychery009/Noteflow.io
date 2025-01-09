@@ -12,10 +12,15 @@ export default {
       colors: {
         light: {
           100: "#F7F7F7",
+          900: "#FDFDFD",
         },
         primary: {
           100: "#12A7FB",
           500: "#7DC5ED",
+        },
+        dark: {
+          100: "#121212",
+          500: "#1F1F1F",
         },
       },
     },

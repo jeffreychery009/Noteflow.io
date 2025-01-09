@@ -49,6 +49,14 @@
   .primary-gradient {
     background: linear-gradient(-90deg, #7dc5ed 0%, #12a7fb 50%);
   }
+
+  .background-light900_dark100 {
+    @apply dark:bg-dark-100 bg-light-900;
+  }
+
+  .invert-colors {
+    @apply invert-0 dark:invert;
+  }
 }
 
 @layer base {

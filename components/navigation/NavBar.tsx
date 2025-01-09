@@ -6,12 +6,13 @@ import React from "react";
 import ROUTES from "@/constants/routes";
 
 import MobileNavigation from "./MobileNavigation";
+import { ThemeToggle } from "./Theme";
 
 const NavBar = () => {
   const pathname = usePathname();
   return (
     <>
-      <nav className="top-0 min-h-24 w-full bg-gray-100">
+      <nav className="top-0 min-h-24 w-full">
         <header className="flex items-center justify-between p-8">
           {pathname === ROUTES.FOLDERS ? (
             <h2 className="h2-bold">Folders</h2>
@@ -20,7 +21,9 @@ const NavBar = () => {
           ) : null}
 
           <div className="flex items-center justify-between gap-6">
-            <div>Theme</div>
+            <div>
+              <ThemeToggle />
+            </div>
             <MobileNavigation />
           </div>
         </header>

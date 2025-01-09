@@ -5,6 +5,7 @@ import { SessionProvider } from "next-auth/react";
 
 import { auth } from "@/auth";
 import { Toaster } from "@/components/ui/toaster";
+import { ThemeProvider } from "@/context/Theme";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -24,11 +25,18 @@ export default async function RootLayout({
 }>) {
   const session = await auth();
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <SessionProvider session={session}>
         <body className={`${inter.variable} antialiased`}>
-          <Toaster />
-          {children}
+          <ThemeProvider
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+            attribute="class"
+          >
+            <Toaster />
+            {children}
+          </ThemeProvider>
         </body>
       </SessionProvider>
     </html>
