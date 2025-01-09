@@ -27,27 +27,30 @@ const MobileNavigation = () => {
             className="invert-colors cursor-pointer"
           />
         </SheetTrigger>
-        <SheetContent side="left" className="border-none">
+        <SheetContent
+          side="left"
+          className="dark:bg-dark-300 w-[320px] border-none"
+        >
           <SheetTitle className="hidden">Navigation</SheetTitle>
           <h2 className="h2-bold pl-4">
             NoteFlow.<span className="text-[#12A7FB]">io</span>
           </h2>
 
-          <div className="mt-[72px] flex-col justify-between overflow-y-auto">
-            <section className="flex flex-col gap-5">
+          <div className="mt-[72px] flex min-h-screen flex-col overflow-y-auto">
+            <section className="flex flex-col gap-4">
               <NavLinks isMobile />
             </section>
-          </div>
 
-          <div className="mb-8 p-4">
-            <SheetClose asChild>
-              <Button
-                className="primary-gradient base-semibold mt-[10px] w-full items-center justify-center rounded-lg p-6 shadow-none"
-                onClick={() => signOut({ callbackUrl: ROUTES.SIGN_IN })}
-              >
-                Log Out
-              </Button>
-            </SheetClose>
+            <div className="mt-20 p-4">
+              <SheetClose asChild>
+                <Button
+                  className="primary-gradient body-regular w-full items-center justify-center rounded-lg p-6 shadow-none dark:text-white"
+                  onClick={() => signOut({ callbackUrl: ROUTES.SIGN_IN })}
+                >
+                  Log Out
+                </Button>
+              </SheetClose>
+            </div>
           </div>
         </SheetContent>
       </Sheet>

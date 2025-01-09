@@ -7,6 +7,7 @@ import ROUTES from "@/constants/routes";
 
 import MobileNavigation from "./MobileNavigation";
 import { ThemeToggle } from "./Theme";
+import SearchBar from "../forms/SearchBar";
 
 const NavBar = () => {
   const pathname = usePathname();
@@ -27,6 +28,9 @@ const NavBar = () => {
             <MobileNavigation />
           </div>
         </header>
+        <div className="mt-4 px-8">
+          <SearchBar />
+        </div>
       </nav>
     </>
   );

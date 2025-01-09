@@ -30,7 +30,8 @@ const NavLinks = ({ isMobile = false }: { isMobile: boolean }) => {
             key={item.label}
             className={cn(
               isActive ? "primary-gradient text-white" : "text-black",
-              "flex items-center justify-start gap-4 rounded-lg p-4"
+              "flex items-center justify-start gap-4 rounded-lg p-4",
+              "dark:text-white"
             )}
           >
             <Image
@@ -38,9 +39,14 @@ const NavLinks = ({ isMobile = false }: { isMobile: boolean }) => {
               alt={item.label}
               width={24}
               height={24}
-              className={cn(isActive ? "invert filter" : "")}
+              className={cn(isActive ? "invert filter" : "", "dark:invert")}
             />
-            <p className={cn(isActive ? "base-bold" : "body-nav")}>
+            <p
+              className={cn(
+                isActive ? "base-bold" : "body-regular",
+                "dark:text-white"
+              )}
+            >
               {item.label}
             </p>
           </Link>
