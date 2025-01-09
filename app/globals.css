@@ -50,8 +50,12 @@
     background: linear-gradient(-90deg, #7dc5ed 0%, #12a7fb 50%);
   }
 
-  .background-light900_dark100 {
-    @apply dark:bg-dark-100 bg-light-900;
+  .background-light100_dark100 {
+    @apply dark:bg-dark-100 bg-light-100;
+  }
+
+  .background-light200_dark200 {
+    @apply dark:bg-dark-200 bg-light-200;
   }
 
   .invert-colors {
