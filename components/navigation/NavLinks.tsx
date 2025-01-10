@@ -30,7 +30,7 @@ const NavLinks = ({ isMobile = false }: { isMobile: boolean }) => {
             key={item.label}
             className={cn(
               isActive ? "primary-gradient text-white" : "text-black",
-              "flex items-center justify-start gap-4 rounded-lg p-4",
+              "flex items-center justify-start gap-4 rounded-lg p-4 hover:bg-light-400 dark:hover:bg-dark-400",
               "dark:text-white"
             )}
           >

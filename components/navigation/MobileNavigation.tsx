@@ -29,19 +29,20 @@ const MobileNavigation = () => {
         </SheetTrigger>
         <SheetContent
           side="left"
-          className="dark:bg-dark-300 w-[320px] border-none"
+          className="w-[320px] border-none dark:bg-dark-300"
         >
           <SheetTitle className="hidden">Navigation</SheetTitle>
           <h2 className="h2-bold pl-4">
             NoteFlow.<span className="text-[#12A7FB]">io</span>
           </h2>
 
-          <div className="mt-[72px] flex min-h-screen flex-col overflow-y-auto">
-            <section className="flex flex-col gap-4">
-              <NavLinks isMobile />
-            </section>
-
-            <div className="mt-20 p-4">
+          <div className="flex h-[calc(100vh-80px)] flex-col justify-between overflow-y-auto">
+            <SheetClose asChild>
+              <section className="flex flex-col gap-6 pt-16">
+                <NavLinks isMobile />
+              </section>
+            </SheetClose>
+            <div className="">
               <SheetClose asChild>
                 <Button
                   className="primary-gradient body-regular w-full items-center justify-center rounded-lg p-6 shadow-none dark:text-white"

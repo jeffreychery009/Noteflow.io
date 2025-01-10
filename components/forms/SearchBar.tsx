@@ -1,12 +1,12 @@
 import React from "react";
+import { Input } from "../ui/input";
 
 const SearchBar = () => {
   return (
     <div>
-      <input
-        className="background-light200_dark200 h-16 w-full rounded-2xl border-[0.5px] border-[#CCCCCC] p-6 text-[#8F8F8F] shadow-sm outline-none dark:border-[#3C3C3C] dark:shadow-sm"
-        type="text"
-        placeholder="Search..."
+      <Input
+        className="background-light200_dark200 h-14 w-full rounded-md border-[0.5px] border-[#CCCCCC] p-6 shadow-sm outline-none dark:border-dark-500 dark:shadow-sm"
+        placeholder="Search"
       />
     </div>
   );
