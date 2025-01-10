@@ -10,7 +10,7 @@ import { toast } from "@/hooks/use-toast";
 import { Button } from "../ui/button";
 
 const SocialAuthForm = () => {
-  const buttonClass = `h-[48px] rounded-[12px] border-none flex flex-1 items-center justify-center  bg-[#D9D9D9] hover:bg-[#D1D1D1] text-dark  shadow-none w-auto  `;
+  const buttonClass = `h-[48px] rounded-[12px] border-none flex flex-1 items-center justify-center  bg-[#D9D9D9] hover:bg-[#D1D1D1] text-dark  shadow-none w-auto dark:bg-dark-700 dark:text-white  `;
 
   const handleSignIn = async (provider: "google" | "twitter" | "facebook") => {
     try {
@@ -42,7 +42,7 @@ const SocialAuthForm = () => {
           width={24}
           height={24}
           alt="Google"
-          className=""
+          className="invert-colors"
         />
         <span>Log in with Apple</span>
       </Button>

@@ -69,7 +69,7 @@ const AuthForm = <T extends FieldValues>({
                     required
                     type={field.name === "password" ? "password" : "text"}
                     {...field}
-                    className="w-full rounded-md bg-white px-4 py-5 font-normal tracking-tight text-gray-900 shadow-none focus:outline-none focus-visible:ring-0"
+                    className="dark:text-dark-600 dark:border-dark-700 w-full rounded-[8px] bg-white px-4 py-5 font-normal tracking-tight text-gray-900 shadow-none focus:outline-none focus-visible:ring-0 dark:bg-dark-500"
                   />
                 </FormControl>
 
@@ -80,7 +80,7 @@ const AuthForm = <T extends FieldValues>({
         ))}
 
         <Button
-          className="base-semibold w-full rounded-[12px] px-3 py-6 tracking-tight"
+          className="base-semibold primary-gradient w-full rounded-[8px] px-3 py-6 tracking-tight dark:text-white"
           disabled={form.formState.isSubmitting}
         >
           {form.formState.isSubmitting
@@ -90,16 +90,16 @@ const AuthForm = <T extends FieldValues>({
             : buttonText}
         </Button>
         {formType === "SIGN_IN" ? (
-          <p className="">
+          <p className="dark:text-dark-600">
             Don&apos;t have an account?{" "}
-            <Link className="font-bold" href={ROUTES.SIGN_UP}>
+            <Link className="font-bold dark:text-white" href={ROUTES.SIGN_UP}>
               Sign Up
             </Link>
           </p>
         ) : (
-          <p>
+          <p className="dark:text-dark-600">
             Already have an account?{" "}
-            <Link className="font-bold" href={ROUTES.SIGN_IN}>
+            <Link className="font-bold dark:text-white" href={ROUTES.SIGN_IN}>
               Sign In
             </Link>
           </p>

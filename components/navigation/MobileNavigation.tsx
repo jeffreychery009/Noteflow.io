@@ -24,7 +24,7 @@ const MobileNavigation = () => {
             alt="menu-icon"
             width={32}
             height={32}
-            className="invert-colors cursor-pointer"
+            className="invert-colors cursor-pointer md:hidden"
           />
         </SheetTrigger>
         <SheetContent
