@@ -10,7 +10,7 @@ import { toast } from "@/hooks/use-toast";
 import { Button } from "../ui/button";
 
 const SocialAuthForm = () => {
-  const buttonClass = `h-[48px] rounded-[12px] border-none flex flex-1 items-center justify-center  bg-[#D9D9D9] hover:bg-[#D1D1D1] text-dark  shadow-none w-auto dark:bg-dark-700 dark:text-white  `;
+  const buttonClass = `h-[48px] rounded-[12px] border-none flex flex-1 items-center justify-center  bg-[#D9D9D9] hover:bg-[#D1D1D1] text-dark  shadow-none w-auto dark:bg-dark-700 hover:dark:bg-dark-600 dark:text-white  `;
 
   const handleSignIn = async (provider: "google" | "twitter" | "facebook") => {
     try {
