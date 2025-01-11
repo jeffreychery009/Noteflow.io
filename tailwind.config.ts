@@ -14,7 +14,8 @@ export default {
           100: "#FDFDFD",
           200: "#FCFCFC",
           300: "#FFFFFF",
-          400: "#F3F3F3", // New shade for consistency
+          400: "#F3F3F3",
+          500: "#F9F9F9",
           900: "#7F7F7F", // Fixed hex value
         },
         primary: {
@@ -32,6 +33,12 @@ export default {
           500: "#2C2C2C",
           600: "#8F8F8F",
           700: "#3C3C3C",
+          800: "#CCCCCC",
+          900: "#404040",
+        },
+        red: {
+          100: "#EF4444",
+          200: "#D35555",
         },
       },
     },
