@@ -2,8 +2,8 @@
   "extends": [
     "next/core-web-vitals",
     "plugin:react/recommended",
-    "plugin:tailwindcss/recommended",
     "plugin:@typescript-eslint/recommended",
+    "plugin:tailwindcss/recommended",
     "prettier"
   ],
   "rules": {
@@ -11,13 +11,5 @@
     "jsx-quotes": ["error", "prefer-double"],
     "tailwindcss/classnames-order": "warn",
     "tailwindcss/no-custom-classname": "off"
-  },
-  "overrides": [
-    {
-      "files": ["*.tsx", "*.jsx"],
-      "rules": {
-        "no-undef": "off"
-      }
-    }
-  ]
+  }
 }
