@@ -1,12 +1,14 @@
 {
   "extends": [
+    "next/core-web-vitals",
     "plugin:react/recommended",
     "plugin:tailwindcss/recommended",
+    "plugin:@typescript-eslint/recommended",
     "prettier"
   ],
   "rules": {
-    "quotes": ["error", "double"], // Enforce double quotes
-    "jsx-quotes": ["error", "prefer-double"], // Enforce double quotes in JSX
+    "quotes": ["error", "double"],
+    "jsx-quotes": ["error", "prefer-double"],
     "tailwindcss/classnames-order": "warn",
     "tailwindcss/no-custom-classname": "off"
   },
