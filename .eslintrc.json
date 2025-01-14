@@ -1,22 +1,21 @@
-module.exports = {
-    extends: [
-      "plugin:react/recommended",
-      "plugin:tailwindcss/recommended",
-      "prettier"
-    ],
-    rules: {
-      "quotes": ["error", "double"], // Enforce double quotes
-      "jsx-quotes": ["error", "prefer-double"], // Enforce double quotes in JSX
-      "tailwindcss/classnames-order": "warn",
-      "tailwindcss/no-custom-classname": "off"
-    },
-    overrides: [
-      {
-        files: ["*.tsx", "*.jsx"],
-        rules: {
-          "no-undef": "off"
-        }
+{
+  "extends": [
+    "plugin:react/recommended",
+    "plugin:tailwindcss/recommended",
+    "prettier"
+  ],
+  "rules": {
+    "quotes": ["error", "double"], // Enforce double quotes
+    "jsx-quotes": ["error", "prefer-double"], // Enforce double quotes in JSX
+    "tailwindcss/classnames-order": "warn",
+    "tailwindcss/no-custom-classname": "off"
+  },
+  "overrides": [
+    {
+      "files": ["*.tsx", "*.jsx"],
+      "rules": {
+        "no-undef": "off"
       }
-    ]
-  };
-  
+    }
+  ]
+}
