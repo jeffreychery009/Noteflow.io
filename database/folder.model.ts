@@ -7,6 +7,7 @@ interface IFolder {
   sharedWith: Schema.Types.ObjectId[];
 }
 
+export interface IFolderDoc extends IFolder, Document {}
 const folderSchema = new Schema<IFolder>(
   {
     ownerId: {

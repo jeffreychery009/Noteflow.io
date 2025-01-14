@@ -10,6 +10,7 @@ export interface INote {
   updatedAt?: Date;
 }
 
+export interface INoteDoc extends INote, Document {}
 const noteSchema = new Schema<INote>(
   {
     title: { type: String, required: true },
