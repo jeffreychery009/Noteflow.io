@@ -51,3 +51,26 @@ export const SignUpSchema = z.object({
       message: "Name can only contain letters and spaces",
     }),
 });
+
+export const UserSchema = z.object({
+  name: z.string().min(1, { message: "Name is required" }),
+  email: z.string().email({ message: "Please provide a valid email address" }),
+  username: z
+    .string()
+    .trim()
+    .regex(/^[a-zA-Z0-9_]+$/, {
+      message: "Username can only contain letters, numbers, and underscores",
+    })
+    .min(3, { message: "Username must be at least 3 characters" }),
+  password: z
+    .string()
+    .min(6, { message: "Password must be at least 6 characters" })
+    .optional(),
+  profileImage: z
+    .string()
+    .url({ message: "Please provide a valid URL" })
+    .optional(),
+  folders: z
+    .array(z.string().min(1, { message: "Folder name must not be empty" }))
+    .optional(),
+});
