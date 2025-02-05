@@ -2,7 +2,7 @@
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.formatOnSave": true,
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "explicit",
+    "source.fixAll.eslint": "always",
     "source.addMissingImports": "explicit"
   },
   "prettier.tabWidth": 2,
@@ -12,8 +12,6 @@
   "prettier.jsxSingleQuote": false,
   "prettier.trailingComma": "es5",
   "prettier.arrowParens": "always",
-  "prettier.printWidth": 10, // Ensure long lines wrap
-
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
