@@ -1,12 +1,13 @@
 "use client";
 
+import React from "react";
+
+import Card from "@/components/cards/Cards";
 import MobileNavigation from "@/components/navigation/MobileNavigation";
+import { Button } from "@/components/ui/button";
+import Divider from "@/components/ui/divider";
 import { Switch } from "@/components/ui/switch";
 import { settingsDescription, settingsSec, settingsSync } from "@/constants";
-import React from "react";
-import Card from "@/components/cards/Cards";
-import Divider from "@/components/ui/divider";
-import { Button } from "@/components/ui/button";
 
 const Settings = () => {
   const buttonClass = `h-[60px] border-[0.5px] border-dark-800 shadow-none dark:border-dark-700 dark:text-white`;
@@ -85,7 +86,7 @@ const Settings = () => {
         </div>
         <div className="mt-3 flex flex-col gap-6">
           <Button
-            className={`${buttonClass} dark: dark:bg-dark-900 bg-white text-black`}
+            className={`${buttonClass} dark: bg-white text-black dark:bg-dark-900`}
           >
             Log out
           </Button>

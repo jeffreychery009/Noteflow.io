@@ -69,7 +69,7 @@ const AuthForm = <T extends FieldValues>({
                     required
                     type={field.name === "password" ? "password" : "text"}
                     {...field}
-                    className="dark:text-dark-600 dark:border-dark-700 w-full rounded-[8px] bg-white px-4 py-5 font-normal tracking-tight text-gray-900 shadow-none focus:outline-none focus-visible:ring-0 dark:bg-dark-500"
+                    className="w-full rounded-[8px] bg-white px-4 py-5 font-normal tracking-tight text-gray-900 shadow-none focus:outline-none focus-visible:ring-0 dark:border-dark-700 dark:bg-dark-500 dark:text-dark-600"
                   />
                 </FormControl>
 

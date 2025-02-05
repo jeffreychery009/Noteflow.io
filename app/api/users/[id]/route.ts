@@ -43,7 +43,7 @@ export async function DELETE(
 
     // Fetch user by id
     const user = await User.findByIdAndDelete(id);
-    if (!user) throw new NotFoundError("User not found");
+    if (!user) throw new NotFoundError("User");
 
     return NextResponse.json({ success: true, data: user }, { status: 200 });
   } catch (error) {
@@ -67,7 +67,7 @@ export async function PUT(
     const validatedData = UserSchema.partial().parse(body);
 
     const updatedUser = await User.findByIdAndUpdate(id, validatedData, {
-      new: true,
+      new: true, // return the updated document
       runValidators: true,
     });
     if (!updatedUser) throw new NotFoundError("User");
