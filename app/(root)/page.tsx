@@ -23,7 +23,7 @@ const Home = () => {
             Organize your thoughts, share ideas, and unlock smarter note-taking.
           </p>
         </div>
-        <div className="gap mt-80 flex flex-col items-center gap-3">
+        <div className="mt-80 flex flex-col items-center gap-3">
           <Link href={ROUTES.SIGN_UP}>
             <Button className="btn-primary primary-gradient dark:text-white">
               Get Started

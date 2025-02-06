@@ -2,11 +2,11 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import { SessionProvider } from "next-auth/react";
+import React from "react";
 
-import { ThemeProvider } from "@/context/Theme";
 import { auth } from "@/auth";
 import { Toaster } from "@/components/ui/toaster";
-import React from "react";
+import { ThemeProvider } from "@/context/Theme";
 
 const inter = Inter({
   variable: "--font-inter",
