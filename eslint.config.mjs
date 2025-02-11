@@ -26,7 +26,7 @@ const eslintConfig = [
       "prefer-template": ["error"],
       "tailwindcss/classnames-order": ["error"],
       "import/order": [
-        "error",
+        "warn",
         {
           groups: [
             "builtin",
