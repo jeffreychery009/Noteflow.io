@@ -3,10 +3,13 @@ import { NextResponse } from "next/server";
 import User from "@/database/user.model";
 import handleError from "@/lib/handlers/error";
 import { NotFoundError, ValidationError } from "@/lib/http-errors";
+import connectDb from "@/lib/mongoose";
 import { UserSchema } from "@/lib/validation";
 import { APIErrorResponse } from "@/types/global";
 
 export async function POST(request: Request) {
+  await connectDb();
+
   const { email } = await request.json();
 
   try {

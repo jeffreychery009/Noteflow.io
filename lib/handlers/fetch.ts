@@ -1,11 +1,15 @@
 import { ActionResponse } from "@/types/global";
 
+import logger from "../logger";
+import handleError from "./error";
+import { RequestError } from "../http-errors";
+
 interface FetchOptions extends RequestInit {
   timeout?: number;
 }
 
-function isError(error: unknown) : error is Error{
-    return error instanceof Error;
+function isError(error: unknown): error is Error {
+  return error instanceof Error;
 }
 export async function fetchHandler<T>(
   url: string,
@@ -33,16 +37,23 @@ export async function fetchHandler<T>(
   };
 
   try {
-    
+    const response = await fetch(url, config);
+
+    clearTimeout(id);
+
+    if (!response.ok) {
+      throw new RequestError(response.status, `HTTP error: ${response.status}`);
+    }
+
+    return await response.json();
   } catch (err) {
     const error = isError(err) ? err : new Error("Unknown error");
 
     if (error.name === "AbortError") {
-        logger.warn(`Request to ${url} timed out`)
-     
-      } else {
-        logger.error(`Error fetching ${url}: ${error.message}`,);
-      }
+      logger.warn(`Request to ${url} timed out`);
+    } else {
+      logger.error(`Error fetching ${url}: ${error.message}`);
     }
+    return handleError(error) as ActionResponse<T>;
   }
 }
