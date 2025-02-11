@@ -1,18 +1,21 @@
 import { NextResponse } from "next/server";
 
-import User from "@/database/user.model";
+import Account from "@/database/account.model";
 import handleError from "@/lib/handlers/error";
-import { ValidationError } from "@/lib/http-errors";
+import { ForbiddenError } from "@/lib/http-errors";
 import connectDb from "@/lib/mongoose";
-import { UserSchema } from "@/lib/validation";
+import { AccountSchema } from "@/lib/validation";
 import { APIErrorResponse } from "@/types/global";
 
 export async function GET() {
   try {
     await connectDb();
 
-    const users = await User.find();
-    return NextResponse.json({ success: true, data: users }, { status: 200 });
+    const accounts = await Account.find();
+    return NextResponse.json(
+      { success: true, data: accounts },
+      { status: 200 }
+    );
   } catch (error) {
     return handleError(error, "api") as APIErrorResponse;
   }
@@ -23,23 +26,23 @@ export async function POST(request: Request) {
     await connectDb();
 
     const body = await request.json();
-    const validateData = UserSchema.safeParse(body);
+    const validateData = AccountSchema.parse(body);
 
-    if (!validateData.success) {
-      throw new ValidationError(validateData.error.flatten().fieldErrors);
-    }
+    const existingAccount = await Account.findOne({
+      provider: validateData.provider,
+      providerAccountId: validateData.providerAccountId,
+    });
+    if (existingAccount)
+      throw new ForbiddenError(
+        "An account with the same provider already exists"
+      );
 
-    const { email, username } = validateData.data;
+    const newAccount = await Account.create(validateData);
 
-    const existingUser = await User.findOne({ email });
-    if (existingUser) throw new Error("User already exists");
-
-    const existingUsername = await User.findOne({ username });
-    if (existingUsername) throw new Error("Username already exists");
-
-    const newUser = await User.create(validateData.data);
-
-    return NextResponse.json({ success: true, data: newUser }, { status: 201 });
+    return NextResponse.json(
+      { success: true, data: newAccount },
+      { status: 201 }
+    );
   } catch (error) {
     return handleError(error, "api") as APIErrorResponse;
   }
