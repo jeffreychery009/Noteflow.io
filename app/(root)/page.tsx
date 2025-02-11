@@ -1,10 +1,14 @@
 import Link from "next/link";
 import React from "react";
 
+import { auth } from "@/auth";
 import { Button } from "@/components/ui/button";
 import ROUTES from "@/constants/routes";
 
-const Home = () => {
+const Home = async () => {
+  const session = await auth();
+
+  console.log("Session", session);
   return (
     <main className="flex min-h-screen flex-col items-center justify-center">
       <div className="mx-auto flex flex-col items-center md:max-w-md">

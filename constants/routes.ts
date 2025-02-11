@@ -5,6 +5,7 @@ const ROUTES = {
   FOLDERS: "/folders",
   FOLDER: "/folders/:folderId",
   NOTES: "folders/:folderId/notes",
+  SIGN_IN_WITH_OAUTH: "signin-with-oauth",
 };
 
 export default ROUTES;
