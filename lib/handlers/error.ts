@@ -58,7 +58,6 @@ const handleError = (error: unknown, responseType: ResponseType = "server") => {
     logger.error(error.message);
     return formatResponse(responseType, 500, error.message);
   }
-  logger.error({ err: error }, "Internal Server Error");
   return formatResponse(responseType, 500, "Internal Server Error");
 };
 
